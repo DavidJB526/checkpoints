@@ -78,7 +78,13 @@ public class PlayerController : MonoBehaviour {
 
     public void SetCurrentCheckpoint(Checkpoint newCurrentCheckpoint)
     {
+        if (currentCheckpoint != null)
+        {
+            currentCheckpoint.SetIsActivated(false);            
+        }
+
         currentCheckpoint = newCurrentCheckpoint;
+        currentCheckpoint.SetIsActivated(true);
     }
 
     public void Respawn()
